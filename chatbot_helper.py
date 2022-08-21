@@ -159,14 +159,14 @@ class ChatBotHelper:
         if return_parent_match_id:
             replies = replies_dict.get(return_parent_match_id)[language]
             reply = random.choice(replies)
-            print(f"\nRETURN_PARENT_MATCHED_ID: {return_parent_match_id}      reply: {reply}")
+            logger.debug(f" RETURN_PARENT_MATCHED_ID: {return_parent_match_id}      reply: {reply}")
             return return_parent_match_id, reply
         else:
             if none_parent_match_ids:
                 reply_id = random.choice(none_parent_match_ids)
                 replies = replies_dict.get(reply_id)[language]
                 reply = random.choice(replies)
-                print(f"\n REPLY_ID: {reply_id}      reply: {reply}")
+                logger.debug(f" REPLY_ID: {reply_id}      reply: {reply}")
                 return reply_id, reply
         return None, None
 
